@@ -160,6 +160,13 @@ section.catalog-main a.category-card .category-thumb.category-photo img{display:
 .catalog-main.barrel-catalog-scene .grid .card{box-shadow:0 12px 35px rgba(0,0,0,.32)}
 @media(max-width:700px){.catalog-main.barrel-catalog-scene{padding:18px}}
 
+/* Barrel-bath category only: fixed fullscreen photograph, scrolling product cards */
+.catalog-main.barrel-catalog-scene{position:relative;isolation:isolate;overflow:visible;max-width:none;width:100%;margin:0;padding:clamp(22px,3vw,46px);background:transparent;min-height:100vh;border-radius:0}
+.catalog-main.barrel-catalog-scene::before{content:"";position:fixed;inset:0;z-index:-2;pointer-events:none;background:#111914 url("./barrel-catalog-background.jpg") center center / cover no-repeat}
+.catalog-main.barrel-catalog-scene::after{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,rgba(8,15,12,.45),rgba(8,15,12,.22) 45%,rgba(8,15,12,.52))}
+.catalog-main.barrel-catalog-scene .grid{position:relative;z-index:1;margin-top:clamp(90px,18vh,220px)}
+.catalog-main.barrel-catalog-scene .grid .card{box-shadow:0 12px 35px rgba(0,0,0,.42)}
+@media(max-width:700px){.catalog-main.barrel-catalog-scene{padding:18px}.catalog-main.barrel-catalog-scene::before{background-position:52% center}.catalog-main.barrel-catalog-scene .grid{margin-top:clamp(85px,15vh,160px)}}
 /* Main catalog: atmospheric backdrop with accessible high-contrast category links */
 .catalog-main.main-catalog-scene{position:relative;isolation:isolate;overflow:hidden;border-radius:24px;padding:clamp(24px,4vw,54px);background:#17201b;min-height:540px}
 .catalog-main.main-catalog-scene::before{content:"";position:absolute;inset:0;z-index:-2;background-image:url("./catalog-sauna-evening.png");background-position:center center;background-size:cover;background-repeat:no-repeat}
